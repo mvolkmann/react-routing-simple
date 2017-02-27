@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import URLSearchParams from 'url-search-params'; // a polyfill for IE
 
 const Home = () =>
@@ -30,7 +30,7 @@ function getLocationParts() {
     hash: location.hash.substring(1),
     path: location.pathname,
     query: new URLSearchParams(location.search)
-  }
+  };
 }
 
 class App extends Component {
