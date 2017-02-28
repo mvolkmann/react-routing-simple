@@ -1,9 +1,11 @@
 import React, {Component} from 'react';
 import URLSearchParams from 'url-search-params'; // a polyfill for IE
 
-const Home = () =>
+const Home = () => (
   <div>
-    <h1>Home</h1>
+    <h1>
+      Home
+    </h1>
 
     {/* Demonstrate hash change via a link. */}
     <a href="#page1">Page 1</a>
@@ -11,25 +13,28 @@ const Home = () =>
 
     {/* Demonstrate hash change via code. */}
     <button onClick={() => location.hash = '#page2'}>Page 2</button>
-  </div>;
+  </div>
+);
 
-const Page1 = () =>
+const Page1 = () => (
   <div>
     <h1>Page 1</h1>
     <p>Use browser back button to return to home page.</p>
-  </div>;
+  </div>
+);
 
-const Page2 = () =>
+const Page2 = () => (
   <div>
     <h1>Page 2</h1>
     <a href="#">Home</a>
-  </div>;
+  </div>
+);
 
 function getLocationParts() {
   return {
     hash: location.hash.substring(1),
     path: location.pathname,
-    query: new URLSearchParams(location.search)
+    query: new URLSearchParams(location.search),
   };
 }
 
@@ -52,8 +57,7 @@ class App extends Component {
         {
           hash === 'page1' ? <Page1 /> :
           hash === 'page2' ? <Page2 /> :
-          <Home />
-        }
+          <Home />}
       </div>
     );
   }
